@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const infoProjeto = {
         versao: "1.0.0 (Demo)",
         tecnologias: ["HTML5", "CSS3 (Glassmorphism)", "Javascript (ES6)"],
-        autor: "Joaquim, Com auxilio de (Marcos Pablo, Maria Eduarda, Jannifer Mendonsa e o cara la que eu nao lembro o nome sei la)"
+        autor: "Joaquim, Com auxilio de (Marcos Pablo, Maria Eduarda, Jannifer Mendonsa e Wallison Xavier)"
     };
 
     // Atualiza a area de detalhes do projeto dinamicamente
