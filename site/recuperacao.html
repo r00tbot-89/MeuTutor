@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperação - AI Skill Evaluator</title>
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+    <button class="btn-voltar" onclick="window.location.href='index.html'">← Voltar ao Início</button>
+
+    <div class="card">
+        <h2>🔄 Prova de Recuperação Personalizada</h2>
+        <p>Esta prova contém apenas os tópicos em que você precisa melhorar!</p>
+
+        <div id="quiz-recuperacao">
+            <div id="perguntas-list"></div>
+            <button onclick="calcularResultadoRecuperacao()" style="margin-top: 20px;">Enviar Recuperação</button>
+        </div>
+
+        <div id="resultado-recuperacao" class="hidden">
+            <h2>📊 Resultado da Recuperação</h2>
+            <h1 id="porcentagem-texto" style="font-size: 48px; color: #00c6ff; margin: 10px 0;">0%</h1>
+            <p id="mensagem-desempenho"></p>
+            <button onclick="window.location.href='index.html'" style="margin-top: 20px;">Voltar ao Início</button>
+        </div>
+    </div>
+
+    <script src="recuperacao.js"></script>
+</body>
+</html>

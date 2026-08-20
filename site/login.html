@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuTutor - Login</title>
+    <link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+    <!-- Botão de retorno para o index -->
+    <button class="btn-voltar" onclick="window.location.href='index.html'">← Voltar</button>
+
+    <div class="login-container">
+        <h2>Bem-vindo de Volta</h2>
+        
+        <form id="loginForm">
+            <div class="input-group">
+                <label for="username">Usuário</label>
+                <input type="text" id="username" name="usuario" required placeholder="Seu Usuário Ou Conta">
+            </div>
+            
+            <div class="input-group">
+                <label for="password">Senha</label>
+                <input type="password" id="password" name="password" required placeholder="Sua Senha">
+            </div>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+
+</body>
+</html>

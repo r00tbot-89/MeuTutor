@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duelo AI - Boss Fight</title>
+    <link rel="stylesheet" href="style.css?v=5">
+    <style>
+        /* Estilos específicos para o Boss Fight */
+        .arena {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .lutador {
+            text-align: center;
+            width: 45%;
+        }
+        .barra-vida-bg {
+            background: rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            height: 16px;
+            width: 100%;
+            overflow: hidden;
+            margin-top: 5px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .barra-vida-fill {
+            height: 100%;
+            transition: width 0.3s ease;
+        }
+        #vida-jogador { background: #2ed573; width: 100%; }
+        #vida-boss { background: #ff4757; width: 100%; }
+        .avatar {
+            font-size: 48px;
+            margin-bottom: 5px;
+        }
+        .timer-box {
+            font-size: 20px;
+            font-weight: bold;
+            color: #ffa502;
+            margin-bottom: 15px;
+        }
+        /* Animação de dano */
+        @keyframes tremer {
+            0% { transform: translate(1px, 1px) rotate(0deg); }
+            20% { transform: translate(-3px, 0px) rotate(1deg); }
+            40% { transform: translate(1px, -1px) rotate(-1deg); }
+            60% { transform: translate(-3px, 1px) rotate(0deg); }
+            80% { transform: translate(2px, 1px) rotate(1deg); }
+            100% { transform: translate(1px, -2px) rotate(-1deg); }
+        }
+        .dano { animation: tremer 0.3s; }
+    </style>
+</head>
+<body>
+
+    <button class="btn-voltar" onclick="window.location.href='index.html'">← Voltar</button>
+
+    <div class="card" id="jogo-card">
+        <h2>⚔️ Duelo Contra a IA Boss</h2>
+        <p>Responda antes que o tempo acabe para derrotar o Robô!</p>
+
+        <!-- ARENA COM AS BARRAS DE VIDA -->
+        <div class="arena">
+            <div class="lutador" id="box-jogador">
+                <div class="avatar">🧑‍🎓</div>
+                <strong>Você</strong>
+                <div class="barra-vida-bg">
+                    <div id="vida-jogador" class="barra-vida-fill"></div>
+                </div>
+            </div>
+
+            <div style="font-size: 22px; font-weight: bold;">VS</div>
+
+            <div class="lutador" id="box-boss">
+                <div class="avatar">🤖</div>
+                <strong>IA Megatron</strong>
+                <div class="barra-vida-bg">
+                    <div id="vida-boss" class="barra-vida-fill"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="timer-box">⏱️ Tempo restante: <span id="tempo">10</span>s</div>
+
+        <!-- PERGUNTA E OPÇÕES -->
+        <div id="arena-perguntas">
+            <div class="questao-box">
+                <p id="pergunta-texto">Carregando duelo...</p>
+                <div id="opcoes-jogo"></div>
+            </div>
+        </div>
+
+        <!-- TELA DE FIM DE JOGO -->
+        <div id="fim-jogo" class="hidden">
+            <h1 id="resultado-titulo"></h1>
+            <p id="resultado-subtitulo"></p>
+            <button onclick="reiniciarJogo()" style="margin-top: 15px;">🔄 Jogar Novamente</button>
+            <button onclick="window.location.href='index.html'" style="margin-top: 10px; background: rgba(255,255,255,0.2);">Voltar ao Início</button>
+        </div>
+    </div>
+
+    <script src="jogo.js"></script>
+</body>
+</html>

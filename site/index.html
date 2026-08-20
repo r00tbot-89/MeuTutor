@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeuTutor (demo)</title>
+    <link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+    <button class="sobre-btn" onclick="window.location.href='sobre.html'">Sobre</button>
+    <!-- BOTÃO DO JOGO DESTACADO E HARMONIZADO -->
+<button class="sobre-btn" onclick="window.location.href='jogo.html'" style="position: fixed; bottom: 20px; left: 20px; top: auto; background: #ff4757; z-index: 9999; box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);">🎮 Mini Jogo</button>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+
+    <div class="card">
+        <!-- TELA 1: Formulário de Configuração -->
+        <div id="form-container">
+            <h2>🤖 Meu Tutor AI</h2>
+            <p>Descubra seu nível na matéria agora mesmo!</p>
+            
+            <label style="float: left;">Seu Nome ou Apelido:</label>
+            <input type="text" id="nome" placeholder="Ex: João Silva">
+            
+            <label style="float: left;">Sua Turma:</label>
+            <select id="turma">
+                <option value="4°AnoFundamental">4° Ano (fundamental)</option>
+                <option value="5°AnoFundamental">5° Ano (fundamental)</option>
+                <option value="6°AnoFundamental">6° Ano (fundamental)</option>
+                <option value="7°AnoFundamental">7° Ano (fundamental)</option>
+                <option value="8°AnoFundamental">8° Ano (fundamental)</option>
+                <option value="9°AnoFundamental">9° Ano (fundamental)</option>
+                <option value="1°Ano">1° Ano</option>
+                <option value="2°Ano">2° Ano</option>
+                <option value="3°Ano">3° Ano</option>
+                <option value="Militar">Militar (Prova)</option>
+                <option value="Concursos">Concursos</option>
+                <option value="Enem">Enem</option>
+            </select>
+            
+            <label style="float: left;">Matéria:</label>
+            <select id="materia">
+                <option value="matematica">Matemática</option>
+                <option value="historia">História</option>
+                <option value="ciencia">Ciências / Biologia</option>
+                <option value="portugues">Português</option>
+                <option value="artes">Artes</option>
+            </select>
+
+            <button onclick="gerarProva()">Gerar Mini Prova com IA</button>
+        </div>
+
+        <!-- TELA 2: Carregamento (Simulando a IA) -->
+        <div id="loading-container" class="hidden">
+            <h2>🧠 A Inteligência Artificial está pensando...</h2>
+            <p>Analisando o nível medio da turma e criando perguntas personalizadas de <span id="materia-escolhida"></span>com base em banco de dados</p>
+            <p style="font-size: 24px; margin-top: 20px;">⏳</p>
+        </div>
+
+        <!-- TELA 3: Prova Gerada -->
+        <div id="quiz-container" class="hidden">
+            <h2 id="quiz-titulo">Prova de IA</h2>
+            <div id="perguntas-list"></div>
+            <button onclick="calcularResultado()">Finalizar Prova</button>
+        </div>
+
+        <!-- TELA 4: Resultado e Recomendação -->
+        <div id="resultado-container" class="hidden">
+            <h2>📊 Resultado Final</h2>
+            <h1 id="porcentagem-texto" style="font-size: 48px; color: #00c6ff; margin: 10px 0;">0%</h1>
+            <p id="mensagem-desempenho"></p>
+            
+            <div id="recomendacoes-area"></div>
+
+            <button onclick="location.reload()" style="margin-top: 20px;">Refazer Simulado</button>
+        </div>
+    </div>
+
+    <!-- Conectando o javascript externo -->
+    <script src="script.js?v=2"></script>
+    
+</body>
+</html>
