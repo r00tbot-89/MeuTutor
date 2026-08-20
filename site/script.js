@@ -6,8 +6,8 @@ const bancoPerguntas = {
             opcoes: ["48", "56", "64"],
             correta: 1,
             topico: "Multiplicação Básica",
-            // Usei a versão youtube-nocookie para evitar erros no player
-            video: "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+            // Usei a versão youtube-nocookie para evitar erros no player do video
+            video: "https://www.youtube-nocookie/watch?v=apPAu1Gw3qs
         },
         {
             pergunta: "2) Qual é a raiz quadrada de 81?",
